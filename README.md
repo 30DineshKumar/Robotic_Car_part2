@@ -7,22 +7,22 @@ A ROS 2 Python package (`my_robot_driver`) that brings a two-wheeled robot to li
 <img width="1211" height="889" alt="Screenshot From 2026-11-13 17-12-34" src="https://github.com/user-attachments/assets/d38d3a20-9324-4552-9639-7ac0e36742b1" />
 
 
-## ✨ Features
+##  Features
 
-- 🎮 **Velocity control**: subscribes to `/cmd_vel` (`geometry_msgs/Twist`)
-- 🧭 **Pose tracking**: integrates linear and angular speed into x, y and yaw
-- 🛞 **Wheel animation**: publishes `left_wheel_joint` and `right_wheel_joint`
-- 🔗 **TF broadcasting**: publishes the robot transform with `tf2_ros`
-- ⏱️ **10 Hz update loop**
+-  **Velocity control**: subscribes to `/cmd_vel` (`geometry_msgs/Twist`)
+-  **Pose tracking**: integrates linear and angular speed into x, y and yaw
+-  **Wheel animation**: publishes `left_wheel_joint` and `right_wheel_joint`
+-  **TF broadcasting**: publishes the robot transform with `tf2_ros`
+-  **10 Hz update loop**
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - Python 3
 - ROS 2 (`rclpy`)
 - `sensor_msgs`, `geometry_msgs`, `tf2_ros`
 - RViz2
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 my_robot_driver/
@@ -42,14 +42,14 @@ my_robot_driver/
 └── setup.cfg
 ```
 
-## ⚙️ Prerequisites
+##  Prerequisites
 
 - ROS 2 (Humble / Jazzy / Lyrical)
 - `colcon` build tools
 - RViz2
 - Part 1 package (`my_robot_description`) built and sourced
 
-## 🚀 Installation
+##  Installation
 
 ```bash
 cd ~/ros2_ws/src
@@ -71,7 +71,7 @@ ros2 topic pub /cmd_vel geometry_msgs/msg/Twist \
 Or drive with the keyboard:
 
 
-## 📡 Topics
+##  Topics
 
 | Topic           | Type                     | Direction | Description                 |
 |-----------------|--------------------------|-----------|-----------------------------|
@@ -79,7 +79,7 @@ Or drive with the keyboard:
 | `/joint_states` | `sensor_msgs/JointState` | Publish   | Left and right wheel angles |
 | `/tf`           | `tf2_msgs/TFMessage`     | Publish   | Robot pose transform        |
 
-## 🧠 How It Works
+##  How It Works
 
 Every 0.1 s the node updates the robot state:
 
@@ -92,13 +92,13 @@ wheel_angle += linear_speed * dt * 5.0
 
 The wheel angles go into a `JointState` message and the pose goes out as a TF transform, so RViz shows the robot moving.
 
-## 🚧 Future Improvements
+##  Future Improvements
 
 - Separate left and right wheel speeds (true differential drive)
 - Publish `nav_msgs/Odometry`
 - Add a single launch file to start everything
 
-## 📄 License
+##  License
 
 Apache-2.0
 
